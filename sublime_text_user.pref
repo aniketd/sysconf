@@ -1,0 +1,15 @@
+{
+    "font_face": "Source Code Pro",
+    "font_size": 10,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "always_show_minimap_viewport": true,
+    "highlight_line": true,
+    "caret_style": "solid",
+    "trim_trailing_white_space_on_save": true,
+    "ensure_newline_at_eof_on_save": true,
+    "highlight_modified_tabs": true,
+    "show_tab_close_buttons": true,
+    "bold_folder_labels": true,
+    "ignored_packages": []
+}
