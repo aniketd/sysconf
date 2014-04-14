@@ -1,4 +1,4 @@
-barebones
+sysconfs
 =========
 
-personal sys confs and scripts
+personal system configuration and scripts
