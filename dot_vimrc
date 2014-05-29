@@ -77,3 +77,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " resizing splits
+nnoremap <C-up> <C-W>+
+nnoremap <C-down> <C-W>-
+nnoremap <C-left> <C-W><
+nnoremap <C-right> <C-W>>
+nnoremap <C-E> <C-W>=
+nnoremap <C-V> <C-W>_
+nnoremap <C-H> <C-W><Bar>
+
