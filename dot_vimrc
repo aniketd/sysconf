@@ -36,7 +36,7 @@ if !has('gui_running')
 filetype plugin indent on
 syntax on
 
-colorscheme Monokai
+colorscheme molokai
 set background=dark
 
 set autoread
@@ -82,6 +82,6 @@ nnoremap <C-down> <C-W>-
 nnoremap <C-left> <C-W><
 nnoremap <C-right> <C-W>>
 nnoremap <C-E> <C-W>=
-nnoremap <C-V> <C-W>_
-nnoremap <C-H> <C-W><Bar>
+nnoremap <C-I> <C-W>_
+nnoremap <C-O> <C-W><Bar>
 
