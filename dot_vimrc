@@ -54,6 +54,7 @@ set autoindent
 set smartindent
 set showmatch
 set nobackup
+set paste
 set noswapfile
 "set mouse=a
 set tabstop=4
