@@ -1,8 +1,11 @@
 #!/bin/bash
-mkdir /tmp/adodefont
-cd /tmp/adodefont
-wget http://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceCodePro_FontsOnly-1.017.zip
-unzip SourceCodePro_FontsOnly-1.017.zip
+mkdir /tmp/adobefont
+rm -rf /tmp/adobefonts/*
+cd /tmp/adobefont
+wget -O code.zip https://github.com/adobe-fonts/source-code-pro/archive/master.zip
+wget -O sans.zip https://github.com/adobe-fonts/source-sans-pro/archive/master.zip
+unzip code.zip
+unzip sans.zip
 mkdir -p ~/.fonts
-cp SourceCodePro_FontsOnly-1.017/OTF/*.otf ~/.fonts
+
 fc-cache -f -v

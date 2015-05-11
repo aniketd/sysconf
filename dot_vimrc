@@ -27,6 +27,7 @@ Bundle 'itchyny/lightline.vim'
 
 "Bundle 'klen/python-mode'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'wakatime/vim-wakatime'
 
 set laststatus=2
 if !has('gui_running')
@@ -54,7 +55,7 @@ set autoindent
 set smartindent
 set showmatch
 set nobackup
-set paste
+"set paste
 set noswapfile
 "set mouse=a
 set tabstop=4
@@ -65,6 +66,12 @@ set scrolloff=10
 
 set cursorline
 highlight CursorLine term=bold cterm=bold guibg=Grey40
+
+set splitright
+set splitbelow
+
+" set default netrw (Explore, Sexplore, Vexplore) view to tree
+let g:netrw_liststyle=3
 
 " disable python-mode pylint-pep-8 annoyance auto-opens errors window if set
 " to 1 by default
@@ -78,11 +85,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " resizing splits
-nnoremap <C-up> <C-W>+
-nnoremap <C-down> <C-W>-
-nnoremap <C-left> <C-W><
-nnoremap <C-right> <C-W>>
+"nnoremap <C-UP> <C-W>+
+"nnoremap <C-DOWN> <C-W>-
+"nnoremap <C-LEFT> <C-W><
+"nnoremap <C-RIGHT> <C-W>>
 nnoremap <C-E> <C-W>=
 nnoremap <C-I> <C-W>_
 nnoremap <C-O> <C-W><Bar>
 
+" kill the damned Ex mode
+nnoremap Q <nop>
