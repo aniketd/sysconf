@@ -26,6 +26,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'itchyny/lightline.vim'
 
 "Bundle 'klen/python-mode'
+Bundle 'nvie/vim-flake8'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'wakatime/vim-wakatime'
 
@@ -71,7 +72,7 @@ set splitright
 set splitbelow
 
 " set default netrw (Explore, Sexplore, Vexplore) view to tree
-let g:netrw_liststyle=3
+"let g:netrw_liststyle=3
 
 " disable python-mode pylint-pep-8 annoyance auto-opens errors window if set
 " to 1 by default
@@ -95,3 +96,14 @@ nnoremap <C-O> <C-W><Bar>
 
 " kill the damned Ex mode
 nnoremap Q <nop>
+
+" whitespace shit
+match ErrorMsg '\s\+$'
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
+"
