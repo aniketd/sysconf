@@ -1,36 +1,46 @@
-" Brief help
+call plug#begin('~/.nvim/plugged')
+
+" Make sure you use single quotes
+" Plug 'junegunn/seoul256.vim'
+" Plug 'junegunn/vim-easy-align'
 "
-" $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" Group dependencies, vim-snippets depends on ultisnips
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "
+" " On-demand loading
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 "
-" $ vim +BundleInstall +qall (for CLI invocation)
+" " Using git URL
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "
-" :BundleList				" list configured bundles
-" :BundleInstall(!) 			" install(update) bundles
-" :BundleSearch(!) foo			" search(or refresh cache first) for foo
-" :BundleClean(!)			" confirm(or auto-approve) removal of unused bundles
+" " Using a non-master branch
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 "
-" see :h vundle
+" " Plugin options
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 "
-" NOTE: comments after Bundle commands are not allowed
+" " Plugin outside ~/.vim/plugged with post-update hook
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"
+" " Unmanaged plugin (manually installed and updated)
+" Plug '~/my-prototype-plugin'
+
+" For colors
+Plug 'flazz/vim-colorschemes'
+
+" The most effective statusline ever...
+Plug 'itchyny/lightline.vim'
+
+" You Complete Me.
+Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
+
+" Add plugins to &runtimepath
+call plug#end()
 
 
-set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'itchyny/lightline.vim'
-
-"Bundle 'klen/python-mode'
-Bundle 'nvie/vim-flake8'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'wakatime/vim-wakatime'
-"Bundle 'phildawes/racer'
-Plugin 'racer-rust/vim-racer'
 
 set laststatus=2
 if !has('gui_running')
@@ -117,17 +127,17 @@ nnoremap Q <nop>
 
 
 " RACER integration
-set hidden
-let g:racer_cmd = "/opt/racer/target/release/racer"
-let $RUST_SRC_PATH="/usr/local/src/rust/src"
-
-" set fileencoding
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
-endif
+"set hidden
+"let g:racer_cmd = '/opt/racer/target/release/racer'
+"let $RUST_SRC_PATH="/usr/local/src/rust/src"
+"
+"" set fileencoding
+"if has("multi_byte")
+"  if &termencoding == ''
+"    let &termencoding = &encoding
+"  endif
+"  set encoding=utf-8
+"  setglobal fileencoding=utf-8
+"  "setglobal bomb
+"  set fileencodings=ucs-bom,utf-8,latin1
+"endif
