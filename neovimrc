@@ -36,7 +36,9 @@ Plug 'itchyny/lightline.vim'
 "Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
-" Deoplete
+" Neocomplete
+Plug 'Shougo/neocomplete.vim'
+" Deoplete [ requires +python3 neovim ]
 "Plug 'Shougo/deoplete.nvim'
 
 " Add plugins to &runtimepath
@@ -54,7 +56,7 @@ set t_Co=256
 filetype plugin indent on
 syntax on
 
-colorscheme molokai
+colorscheme Tomorrow-Night
 set background=dark
 
 set fileformat=unix
@@ -88,6 +90,9 @@ highlight CursorLine term=bold cterm=bold guibg=Grey40
 
 set splitright
 set splitbelow
+
+" enable @ startup
+let g:deoplete#enable_at_startup = 1
 
 " set default netrw (Explore, Sexplore, Vexplore) view to tree
 "let g:netrw_liststyle=3
