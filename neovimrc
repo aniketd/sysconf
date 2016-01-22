@@ -5,7 +5,7 @@ call plug#begin('~/.nvim/plugged')
 " Plug 'junegunn/vim-easy-align'
 "
 " Group dependencies, vim-snippets depends on ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 "
 " " On-demand loading
 " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -33,7 +33,11 @@ Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 
 " You Complete Me.
-Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
+"Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Deoplete
+"Plug 'Shougo/deoplete.nvim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -43,9 +47,9 @@ call plug#end()
 
 
 set laststatus=2
-if !has('gui_running')
-      set t_Co=256
-  endif
+"if !has('gui_running')
+set t_Co=256
+"endif
 
 filetype plugin indent on
 syntax on
