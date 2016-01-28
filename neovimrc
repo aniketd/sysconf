@@ -32,14 +32,17 @@ Plug 'flazz/vim-colorschemes'
 " The most effective statusline ever...
 Plug 'itchyny/lightline.vim'
 
+" Haskell plug that's great
+Plug 'neovimhaskell/haskell-vim.git'
+
 " You Complete Me.
 "Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Neocomplete
-Plug 'Shougo/neocomplete.vim'
+"Plug 'Shougo/neocomplete.vim'
 " Deoplete [ requires +python3 neovim ]
-"Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -99,7 +102,7 @@ let g:deoplete#enable_at_startup = 1
 
 " disable python-mode pylint-pep-8 annoyance auto-opens errors window if set
 " to 1 by default
-let g:pymode_line_cwindow = 0
+"let g:pymode_line_cwindow = 0
 
 " splitting and tabbing settings: to move between split windows
 "set splitbelow
