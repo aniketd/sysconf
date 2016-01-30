@@ -33,7 +33,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 
 " Haskell plug that's great
-Plug 'neovimhaskell/haskell-vim.git'
+Plug 'neovimhaskell/haskell-vim'
 
 " You Complete Me.
 "Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
