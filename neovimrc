@@ -96,6 +96,7 @@ set splitbelow
 
 " enable @ startup
 let g:deoplete#enable_at_startup = 1
+"let g:python_host_prog = 'python'
 
 " set default netrw (Explore, Sexplore, Vexplore) view to tree
 "let g:netrw_liststyle=3
