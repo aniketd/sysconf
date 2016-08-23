@@ -33,7 +33,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 
 " Haskell plug that's great
-Plug 'neovimhaskell/haskell-vim'
+"Plug 'neovimhaskell/haskell-vim'
 
 " You Complete Me.
 "Plug 'Valloric/YouCompleteMe', {'do': './install.sh'}
@@ -43,6 +43,9 @@ Plug 'neovimhaskell/haskell-vim'
 "Plug 'Shougo/neocomplete.vim'
 " Deoplete [ requires +python3 neovim ]
 Plug 'Shougo/deoplete.nvim'
+
+" Hakell plug that's even more great
+"Plug 'eagletmt/neco-ghc'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -93,6 +96,8 @@ highlight CursorLine term=bold cterm=bold guibg=Grey40
 
 set splitright
 set splitbelow
+
+set colorcolumn=80,100,120
 
 " enable @ startup
 let g:deoplete#enable_at_startup = 1
