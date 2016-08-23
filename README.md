@@ -1,4 +1,4 @@
-sysconfs
-=========
+sysconf
+=======
 
-personal system configuration and scripts
+Personal system configuration and related snippets.
