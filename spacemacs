@@ -34,12 +34,12 @@ values."
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
-     ;; erc
+     erc
      (haskell :variables
               haskell-process-type 'stack-ghci
               haskell-enable-ghc-mod-support nil)
-     ;; erlang
-     ;; javascript
+     erlang
+     javascript
      python
      ;; lua
      ;; sql
@@ -105,13 +105,14 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         leuven
+   dotspacemacs-themes '(;;spacemacs-dark
+                         ;; spacemacs-light
+                         ;; solarized-light
+                         ;; solarized-dark
+                         ;; leuven
                          monokai
-                         zenburn)
+                         ;;zenburn
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -269,7 +270,6 @@ you should place your code here."
   ;; (setq-default fill-column 100)
   (setq-default fill-column 120)
   (indent-guide-global-mode)                                  ;; Indent guides
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)    ;; take care of trailing whitespace
   (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)  ;; haskell-mode
   (add-to-list 'exec-path "~/.local/bin/")                    ;; haha !  we can use stack with spacemacs
   (with-eval-after-load 'org (setq org-agenda-files '("~/Dropbox/org-mode/org")))
