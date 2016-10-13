@@ -1,10 +1,12 @@
 sudo pacman -S --noconfirm git tmux gdm emacs neovim xclip fish
+sudo yaourt -S aura-bin --noconfirm
+sudo aura -A ttf-fantasque-sans tor-browser-en --noconfirm
 
 # setup git
 git config --global user.name "Aniket Deshpande"
 git config --global user.email "anicake@gmail.com"
 git config --global core.editor nvim
-git config --global core.autocrlf true
+git config --global core.autocrlf input
 git config --global credential.helper 'cache --timeout=3600'
 
 # clone sysconf
@@ -22,7 +24,6 @@ echo "TMUX: `tmux source ~/.tmux.conf` and then PREFIX-I to install plugins."
 #curl -L http://get.oh-my.fish | fish # TODO
 
 # spacemacs
-## emacs
 mkdir -p ~/.config/systemd/user/
 cp ~/Code/sysconf/systemd.emacs.service ~/.config/systemd/user/emacs.service
 systemctl --user enable emacs.service
