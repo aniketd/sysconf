@@ -332,6 +332,14 @@ you should place your code here."
   ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
   ;;(add-to-list 'exec-path "~/.local/bin/")                    ;; haha !  we can use stack with spacemacs
   ;;(with-eval-after-load 'org (setq org-agenda-files '("~/Dropbox/org-mode/org")))
+  ;;
+  ;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;
+  ;; trying to get the clipboard copy/paste working
+  ;;
+  ;; Works only in the GTK version of emacs and not in the terminal version.
+  ;;
   (defun copy-to-clipboard ()
     "Copies selection to x-clipboard."
     (interactive)
@@ -342,7 +350,7 @@ you should place your code here."
           )
       (if (region-active-p)
           (progn
-            (shell-command-on-region (region-beginning) (region-end) "xclip -selection clipboard")
+            (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
             (message "region-active-p :: Yanked region to clipboard!")
             (deactivate-mark))
         (message "No region active; can't yank to clipboard!")))
@@ -356,11 +364,14 @@ you should place your code here."
           (clipboard-yank)
           (message "graphics active")
           )
-      (insert (shell-command-to-string "xclip -selection clipboard -o"))
+      (insert (shell-command-to-string "xsel -o -b"))
       )
     )
   (evil-leader/set-key "o y" 'copy-to-clipboard)
   (evil-leader/set-key "o p" 'paste-from-clipboard)
+  ;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
