@@ -1,4 +1,4 @@
-sudo pacman -S --noconfirm git tmux gdm emacs neovim xclip fish
+sudo pacman -S --noconfirm git tmux gdm emacs neovim xclip xsel fish
 sudo yaourt -S aura-bin --noconfirm
 sudo aura -A ttf-fantasque-sans tor-browser-en --noconfirm
 
@@ -21,7 +21,7 @@ ln -s Code/sysconf/tmux.conf .tmux.conf
 echo "TMUX: `tmux source ~/.tmux.conf` and then PREFIX-I to install plugins."
 
 # oh my fish # TODO
-#curl -L http://get.oh-my.fish | fish # TODO
+curl -L http://get.oh-my.fish | fish # TODO
 
 # spacemacs
 mkdir -p ~/.config/systemd/user/
