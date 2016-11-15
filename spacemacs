@@ -344,7 +344,11 @@ you should place your code here."
 
   ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; web-mode
+  ;; Org-mode
+  (with-eval-after-load 'org (setq org-agenda-files
+                                   '("/home/aniket/Sync/orgmode/")))
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Web-mode
 
   (seq-default
    ;; js2-mode
@@ -362,7 +366,6 @@ you should place your code here."
   ;;   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
   ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;
   ;; Copy/Paste from clipboard
   ;;
   ;; Works only in the GTK version of emacs and not in the terminal version.
