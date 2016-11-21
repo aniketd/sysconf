@@ -333,7 +333,6 @@ you should place your code here."
   ;; (setq-default fill-column 100)
   (indent-guide-global-mode)                ;; Indent guides
   (setq neo-dont-be-alone nil)              ;; neotree toggle should be able to be alone.
-  ;;(with-eval-after-load 'org (setq org-agenda-files '("~/Dropbox/org-mode/org")))
   ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; skewer-mode
@@ -345,14 +344,35 @@ you should place your code here."
   ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Org-mode
-  (with-eval-after-load 'org (setq org-agenda-files
-                                   '("/home/aniket/Sync/orgmode/")))
+  ;;
+  (with-eval-after-load 'org
+    ;;'(progn
+    (setq org-directory "~/Sync/orgmode/")
+    (setq org-agenda-files '("~/Sync/orgmode/tasks/work.org" "~/Sync/orgmode/tasks/personal.org"))
+    (setq org-default-notes-file (concat org-directory "notes.org"))
+    ;;  )
+    )
+  ;;
+  ;; add project specific org files to the agenda
+  ;; (with-eval-after-load 'org-agenda
+  ;;   (require 'org-projectile)
+  ;;   (push (org-projectile:todo-files) org-agenda-files))
+  ;;
+  ;; set custom bullets style because the default one sucks... :P
+  (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
+  ;;
+  ;; permanently enable mode line display of org clock...
+  (setq spaceline-org-clock-p t)
+  ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Web-mode
 
-  (seq-default
+  (setq-default
+   javascript-indent-level 2
    ;; js2-mode
    js2-basic-offset 2
+   js2-indent-level 2
+   js-indent-level 2
    ;; web-mode
    css-indent-offset 2
    web-mode-markup-indent-offset 2
@@ -360,10 +380,11 @@ you should place your code here."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2
    )
-  ;; (with-eval-after-load 'web-mode
-  ;;   (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-  ;;   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-  ;;   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
+    )
   ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Copy/Paste from clipboard
