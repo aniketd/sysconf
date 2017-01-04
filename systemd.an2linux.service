@@ -1,0 +1,13 @@
+[Unit]
+Description=AN2Linux server: the android-to-linux notifications sharing util.
+
+[Service]
+Type=simple
+StandardOutput=syslog
+StandardError=syslog
+ExecStart=/home/aniket/Code/an2linuxserver/an2linuxserver.py
+#ExecStop=
+Restart=always
+
+[Install]
+WantedBy=default.target

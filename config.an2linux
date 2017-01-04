@@ -1,0 +1,22 @@
+[tcp]
+tcp_server = on
+tcp_port = 46352
+
+[bluetooth]
+bluetooth_server = on
+
+[notification]
+# notification_timeout: display notification for this many seconds
+# set 0 to never expire
+# this setting might be completely ignored by your notification server
+notification_timeout = 5
+
+# list_size_duplicates: number of latest notifications to keep
+# integer 0-50, if a notification is in this list it will not be shown
+# set to 0 to disable
+list_size_duplicates = 2
+
+# ignore_duplicates_list_for_titles: notification titles that ignore duplicates list
+# comma-separated, case-sensitive
+ignore_duplicates_list_for_titles = AN2Linux, title, Snapchat
+

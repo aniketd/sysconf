@@ -17,6 +17,7 @@ git config --global core.autocrlf input
 git config --global credential.helper 'cache --timeout=3600'
 
 mkdir ~/Code
+mkdir -p ~/.config/systemd/user/
 
 # clone sysconf
 cd ~/Code
@@ -48,7 +49,6 @@ echo "TMUX: `tmux source ~/.tmux.conf` and then PREFIX-I (^b-I) to install plugi
 curl -L http://get.oh-my.fish | fish # TODO
 
 # spacemacs
-mkdir -p ~/.config/systemd/user/
 cp ~/Code/sysconf/systemd.emacs.service ~/.config/systemd/user/emacs.service
 # systemctl --user enable emacs.service
 # systemctl --user start emacs.service
@@ -59,3 +59,11 @@ ln -s ~/Code/sysconf/spacemacs ~/.spacemacs
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo "NEOVIM: enter and type :PlugInstall!"
+
+# an2linux notification from the phone.
+sudo pacman -S --noconfirm bluez-libs python-pybluez libnotify
+cd ~/Code
+git clone https://github.com/rootkiwi/an2linuxserver.git
+cp ~/Code/sysconf/systemd.an2linux.service ~/.config/systemd/user/an2linux.service
+systemctl --user enable an2linux.service
+systemctl --user start an2linux.service
