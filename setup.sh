@@ -2,7 +2,7 @@
 sudo pacman -Syyu --noconfirm
 
 # basic setup
-sudo pacman -S --noconfirm git tmux gdm emacs neovim xclip xsel fish inotify-tools
+sudo pacman -S --noconfirm git tmux gdm emacs neovim xclip xsel fish inotify-tools st
 sudo yaourt -S --noconfirm aura-bin
 sudo aura -A --noconfirm ttf-fantasque-sans
 sudo aura -A --noconfirm tor-browser-en
@@ -29,7 +29,7 @@ sudo ln -s ~/Code/sysconf/xorg.conf /etc/X11/xorg.conf
 ln -s ~/Code/sysconf/blackhole.png ~/Pictures/blackhole.png
 
 # xmonad
-sudo pacman -S --noconfirm xmonad xmonad-contrib xmobar stalonetray dmenu scrot cabal-install xcompmgr feh slim
+sudo pacman -S --noconfirm xmonad xmonad-contrib xmobar stalonetray dmenu scrot cabal-install xcompmgr feh slim slock
 sudo cabal-update
 sudo cabal-install --global yeganesh
 cd
@@ -60,10 +60,10 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo "NEOVIM: enter and type :PlugInstall!"
 
-# an2linux notification from the phone.
-sudo pacman -S --noconfirm bluez-libs python-pybluez libnotify
-cd ~/Code
-git clone https://github.com/rootkiwi/an2linuxserver.git
-cp ~/Code/sysconf/systemd.an2linux.service ~/.config/systemd/user/an2linux.service
-systemctl --user enable an2linux.service
-systemctl --user start an2linux.service
+# # an2linux notification from the phone.
+# sudo pacman -S --noconfirm bluez-libs python-pybluez libnotify
+# cd ~/Code
+# git clone https://github.com/rootkiwi/an2linuxserver.git
+# cp ~/Code/sysconf/systemd.an2linux.service ~/.config/systemd/user/an2linux.service
+# systemctl --user enable an2linux.service
+# systemctl --user start an2linux.service
