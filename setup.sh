@@ -45,6 +45,10 @@ ln -s .xmonad/xmonad-session-rc .xsessionrc
 ln -s .xmonad/xmonad-session-rc .xsession
 # not you can start with `startx`, after login.
 
+# screw gnome dependency over at-spi-bus-launcher et. al.
+sudo echo -e "\n[options]\nNoExtract = usr/share/dbus-1/services/org.a11y.*\n" | sudo tee -a /etc/pacman.conf # this will print the echo to stdout too, unless > /dev/null
+sudo pacman -S gtk3 at-spi2-core # this stops useless buggy gnome-dependent software to spawn
+
 # tmux
 cd
 mkdir -p .tmux/plugins
