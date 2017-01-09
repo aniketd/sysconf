@@ -1,66 +1,7 @@
-# setup the network first
-#cd /etc/
-#sudo mv resolv.conf resolv.conf.orig
-#sudo ln -s /etc/systemd/resolve/resolv.conf /etc/resolv.conf
+#!/bin/bash
 
-sudo echo "
-# /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
-ctrl_interface=/var/run/wpa_supplicant
-ctrl_interface_group=wheel
-update_config=1
-eapol_version=1
-ap_scan=1
-fast_reauth=1
-" | sudo tee -a /etc/wpa_supplicant/wpa_supplicant-{DEVICE-NAME}.conf
-# WIRELESS_DEVICE = TODO capture wireless device and then use that to write wpa_supplicant files etc.
-sudo echo "
-# /etc/systemd/network/wireless.network
-[Match]
-Name=wl*
-
-[Network]
-DHCP=yes
-RouteMetric=20
-IPv6PrivacyExtensions=true
-## to use static IP uncomment these instead of DHCP
-#DNS=192.168.1.254
-#Address=192.168.1.87/24
-#Gateway=192.168.1.254
-" | sudo tee -a /etc/systemd/network/wireless.network
-
-sudo echo "
-# /etc/systemd/network/wired.network
-[Match]
-Name=en*
-
-[Network]
-DHCP=yes
-RouteMetric=10
-IPv6PrivacyExtensions=true
-## to use static IP uncomment these instead of DHCP
-#DNS=192.168.1.254
-#Address=192.168.1.87/24
-#Gateway=192.168.1.254
-" | sudo tee -a /etc/systemd/network/wired.network
-
-sudo systemctl disable networkmanager
-sudo systemctl stop networkmanager
-
-sudo -i
-rm /etc/resolv.conf
-systemctl enable systemd-networkd 
-systemctl enable wpa_supplicant@{DEVICE-NAME}
-systemctl enable systemd-resolved
-systemctl start systemd-networkd
-systemctl start wpa_supplicant@wlp1s0 # like this one
-systemctl start systemd-resolved
-ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
-
-set +o history
-sudo wpa_passphrase <ESSID> <passphrase> >> /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
-set -o history
-
-echo "REBOOT: wifi should work..."
+# setup network
+./syssetup/network.sh
 
 # update this sh*t
 sudo pacman -Syyu --noconfirm
