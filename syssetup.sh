@@ -31,13 +31,13 @@ git clone https://github.com/aniketd/sysconf.git
 cd
 
 # xorg.conf for xmonad
-sudo ln -s ~/Code/sysconf/xorg.conf /etc/X11/xorg.conf
+sudo ln -s ~/Code/sysconf/xorg.conf /etc/X11/xorg.conf # This has setup for monitors
 
 # wallpaper [extremely important]
 ln -s ~/Code/sysconf/blackhole.png ~/Pictures/blackhole.png
 
 # xmonad
-sudo pacman -S --noconfirm xmonad xmonad-contrib xmobar stalonetray scrot cabal-install xcompmgr feh slock # slim (no)
+sudo pacman -S --noconfirm xmonad xmonad-contrib xmobar stalonetray scrot cabal-install xcompmgr feh slock dunst
 # # if you want dmenu with yeganesh
 # sudo cabal-update
 # sudo pacman -S --noconfirm dmenu
@@ -49,10 +49,13 @@ ln -s .xmonad/xmonad-session-rc .xinitrc
 ln -s .xmonad/xmonad-session-rc .xsessionrc
 ln -s .xmonad/xmonad-session-rc .xsession
 # not you can start with `startx`, after login.
-
 # screw gnome dependency over at-spi-bus-launcher et. al.
 sudo echo -e "\n[options]\nNoExtract = usr/share/dbus-1/services/org.a11y.*\n" | sudo tee -a /etc/pacman.conf # this will print the echo to stdout too, unless > /dev/null
 sudo pacman -S gtk3 at-spi2-core # this stops useless buggy gnome-dependent software to spawn
+# notifications with dunst
+cd
+mkdir -p .config/dunst
+ln -s ~/Code/sysconf/dunstrc .config/dunst/dunstrc
 
 # tmux
 cd
