@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # setup network
-./syssetup/network.sh
+./extras/network.sh
 
 # update this sh*t
 sudo pacman -Syyu --noconfirm
@@ -37,11 +37,14 @@ sudo ln -s ~/Code/sysconf/xorg.conf /etc/X11/xorg.conf # This has setup for moni
 ln -s ~/Code/sysconf/blackhole.png ~/Pictures/blackhole.png
 
 # xmonad
-sudo pacman -S --noconfirm xmonad xmonad-contrib xmobar stalonetray scrot cabal-install xcompmgr feh slock dunst
+sudo pacman -S --noconfirm xmonad xmonad-contrib xmobar stalonetray xcompmgr feh slock dunst
 # # if you want dmenu with yeganesh
 # sudo cabal-update
 # sudo pacman -S --noconfirm dmenu
 # sudo cabal-install --global yeganesh
+cd
+mkdir -p ~/Pictures/scrots
+sudo pacman -S --noconfirm scrot
 cd
 mv .xmonad .xmonad.orig
 git clone https://github.com/aniketd/xmonad-config.git .xmonad
@@ -50,8 +53,11 @@ ln -s .xmonad/xmonad-session-rc .xsessionrc
 ln -s .xmonad/xmonad-session-rc .xsession
 # not you can start with `startx`, after login.
 # screw gnome dependency over at-spi-bus-launcher et. al.
-sudo echo -e "\n[options]\nNoExtract = usr/share/dbus-1/services/org.a11y.*\n" | sudo tee -a /etc/pacman.conf # this will print the echo to stdout too, unless > /dev/null
-sudo pacman -S gtk3 at-spi2-core # this stops useless buggy gnome-dependent software to spawn
+sudo echo -e "\n[options]\nNoExtract = usr/share/dbus-1/services/org.a11y.*\n" | sudo tee -a /etc/pacman.conf
+# this will print the echo to stdout too, unless > /dev/null
+sudo pacman -S gtk3 at-spi2-core
+# this stops useless buggy gnome-dependent software to spawn
+
 # notifications with dunst
 cd
 mkdir -p .config/dunst
@@ -73,8 +79,8 @@ omf install chain # this is THE theme!
 # spacemacs
 cd
 cp Code/sysconf/systemd.emacs.service .config/systemd/user/emacs.service
-# systemctl --user enable emacs.service
-# systemctl --user start emacs.service
+systemctl --user enable emacs.service
+systemctl --user start emacs.service
 git clone https://github.com/syl20bnr/spacemacs .emacs.d
 ln -s ~/Code/sysconf/spacemacs ~/.spacemacs
 
