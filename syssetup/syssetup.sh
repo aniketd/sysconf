@@ -7,12 +7,13 @@
 sudo pacman -Syyu --noconfirm
 
 # basic setup
-sudo pacman -S --noconfirm git tmux emacs neovim xclip xsel fish inotify-tools st
+sudo pacman -S --noconfirm git tmux emacs neovim xclip xsel fish inotify-tools st cmus
 sudo yaourt -S --noconfirm aura-bin
 sudo aura -A --noconfirm ttf-fantasque-sans
 sudo aura -A --noconfirm tor-browser-en
 sudo aura -A --noconfirm spideroak-one encryptr
 sudo aura -A --noconfirm slack-desktop
+sudo aura -A --noconfirm pyradio-git
 
 # setup git
 git config --global user.name "Aniket Deshpande"
@@ -51,11 +52,14 @@ git clone https://github.com/aniketd/xmonad-config.git .xmonad
 ln -s .xmonad/xmonad-session-rc .xinitrc
 ln -s .xmonad/xmonad-session-rc .xsessionrc
 ln -s .xmonad/xmonad-session-rc .xsession
+#
+# # This following is a bad thing. Xmonad can crash aburptly.
+# # Do not use it. Find an alternative
 # not you can start with `startx`, after login.
 # screw gnome dependency over at-spi-bus-launcher et. al.
-sudo echo -e "\n[options]\nNoExtract = usr/share/dbus-1/services/org.a11y.*\n" | sudo tee -a /etc/pacman.conf
+#sudo echo -e "\n[options]\nNoExtract = usr/share/dbus-1/services/org.a11y.*\n" | sudo tee -a /etc/pacman.conf
 # this will print the echo to stdout too, unless > /dev/null
-sudo pacman -S gtk3 at-spi2-core
+#sudo pacman -S gtk3 at-spi2-core
 # this stops useless buggy gnome-dependent software to spawn
 
 # notifications with dunst
