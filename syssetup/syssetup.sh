@@ -12,6 +12,7 @@ sudo yaourt -S --noconfirm aura-bin
 sudo aura -A --noconfirm ttf-fantasque-sans
 sudo aura -A --noconfirm tor-browser-en
 sudo aura -A --noconfirm spideroak-one encryptr
+sudo aura -A --noconfirm megasync
 sudo aura -A --noconfirm slack-desktop
 sudo aura -A --noconfirm pyradio-git
 
