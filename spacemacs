@@ -37,34 +37,33 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-     shell-scripts
-     (haskell :variables
-              haskell-process-type 'stack-ghci
-              haskell-completion-backend 'intero
-              haskell-enable-hindent-style "johan-tibell")
+     ;; shell-scripts
+     ;; (haskell :variables
+     ;;          haskell-process-type 'stack-ghci
+     ;;          haskell-completion-backend 'intero
+     ;;          haskell-enable-hindent-style "johan-tibell")
      ;; better-defaults
-     elixir
-     erlang
-     emacs-lisp
+     ;; elixir
+     ;; erlang
+     ;; emacs-lisp
      git
-     asciidoc
-     markdown
+     ;; asciidoc
+     ;; markdown
      yaml
      helm
-     org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     ;s; spell-checking
+     ;; org
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
+     ;; spell-checking
      syntax-checking
-     erc
-     ;; erlang
+     ;; erc
      javascript
      html
      react
-     python
+     ;; python
      ;; lua
-     sql
+     ;; sql
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
