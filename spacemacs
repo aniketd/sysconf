@@ -38,18 +38,18 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      ;; shell-scripts
-     ;; (haskell :variables
-     ;;          haskell-process-type 'stack-ghci
-     ;;          haskell-completion-backend 'intero
-     ;;          haskell-enable-hindent-style "johan-tibell")
+     (haskell :variables
+              haskell-process-type 'stack-ghci
+              haskell-completion-backend 'intero
+              haskell-enable-hindent-style "johan-tibell")
      ;; better-defaults
-     ;; elixir
-     ;; erlang
-     ;; emacs-lisp
+     elixir
+     erlang
+     emacs-lisp
      git
      ;; asciidoc
-     ;; markdown
-     yaml
+     markdown
+     ;; yaml
      helm
      ;; org
      ;; (shell :variables
