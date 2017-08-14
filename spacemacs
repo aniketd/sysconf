@@ -59,12 +59,18 @@ values."
      syntax-checking
      ;; erc
      javascript
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 typescript-fmt-tool 'typescript-formatter)
      html
      react
      python
      ;; lua
      ;; sql
      ;; version-control
+     (wakatime :variables
+               wakatime-api-key "fb4dbad1-964e-40d7-a96a-8dbcbd1049f1"
+               wakatime-cli-path "/usr/local/bin/wakatime")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -302,7 +308,7 @@ values."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
